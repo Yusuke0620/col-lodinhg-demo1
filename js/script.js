@@ -1,45 +1,36 @@
 const loading = document.querySelector('#loading');
-const loadingScreen = document.querySelector('#loading-screen');
-const loadingP = document.querySelector('#loading p');
+const loadingText = document.querySelector('#loading p');
 
 window.addEventListener('load', () => {
     loading.animate(
         {
-            opacity: [1, 0],
-            visibility:'hidden',
-        },        
-        {
-            duration: 2000,
-            delay: 1000,
-            fill: 'forwards',
-        },
-    );
-
-    loadingScreen.animate(
-        {
-            translate: ['100vw 0', '0 0', '-100vw 0'],
+            backdropFilter: ['blur(1px)', 'blur(0)'],
+            background: ['rgba(238, 221, 136, 1)', 'rgba(238, 221, 136, 0)'],
+            visibility: 'hidden',
         },
         {
             duration: 2000,
             delay: 1200,
             easing: 'ease',
-        }
+            fill: 'forwards',
+        },
     );
 
-    loadingP.animate(
+    loadingText.animate(
         [
             {
                 opacity: 1,
-                offset: .5,
+                offset: .8,
             },
             {
                 opacity: 0,
                 offset: 1,
             },
-        ],
+        ],   
         {
-            duration: 1000,
+            duration: 1200,
+            easing: 'ease',
             fill: 'forwards',
         },
-    );
-});
+    )
+})
