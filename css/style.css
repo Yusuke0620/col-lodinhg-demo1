@@ -16,6 +16,8 @@ html {
 body {
   font-family: "Meiryo";
   color: #000;
+  background: url("../../images/bg-shadow.jpg") no-repeat bottom right/cover fixed;
+  inset: 0;
 }
 
 img {
@@ -29,6 +31,46 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.top {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+}
+.top::after {
+  background: url("../../images/bg-hero.jpg") no-repeat center/cover;
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+}
+.top h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: max(12vw, 3rem);
+  z-index: 999;
+}
+
+#loading {
+  background-color: gray;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+#loading #loading-screen {
+  background-color: aquamarine;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  translate: 0 100vh;
 }
 
 /* レスポンシブ・ブレークポイントpx
